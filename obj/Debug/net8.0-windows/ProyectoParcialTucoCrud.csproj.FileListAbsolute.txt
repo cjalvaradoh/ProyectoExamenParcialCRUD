@@ -18,3 +18,5 @@ C:\Users\Ces\source\repos\ProyectoParcialTucoCrud\obj\Debug\net8.0-windows\refin
 C:\Users\Ces\source\repos\ProyectoParcialTucoCrud\obj\Debug\net8.0-windows\ProyectoParcialTucoCrud.pdb
 C:\Users\Ces\source\repos\ProyectoParcialTucoCrud\obj\Debug\net8.0-windows\ProyectoParcialTucoCrud.genruntimeconfig.cache
 C:\Users\Ces\source\repos\ProyectoParcialTucoCrud\obj\Debug\net8.0-windows\ref\ProyectoParcialTucoCrud.dll
+C:\Users\Ces\source\repos\ProyectoParcialTucoCrud\obj\Debug\net8.0-windows\ProyectoParcialTucoCrud.sourcelink.json
+C:\Users\Ces\source\repos\ProyectoParcialTucoCrud\obj\Debug\net8.0-windows\ProyectoParcialTucoCrud.FormulariosVista.MenuPrincipal.resources
