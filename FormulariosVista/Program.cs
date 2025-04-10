@@ -1,4 +1,5 @@
 using ProyectoParcialTucoCrud.Aplication;
+using ProyectoParcialTucoCrud.FormulariosVista;
 using ProyectoParcialTucoCrud.Venta.Aplication;
 
 namespace ProyectoParcialTucoCrud.Venta.Winforms
@@ -17,7 +18,7 @@ namespace ProyectoParcialTucoCrud.Venta.Winforms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new VentaForm(crearHandler, eliminarHandler));
+            Application.Run(new MenuPrincipal(crearHandler, eliminarHandler));
         }
     }
 }
