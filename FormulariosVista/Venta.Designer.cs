@@ -37,7 +37,7 @@
             dataGridView1 = new DataGridView();
             idVentas = new DataGridViewTextBoxColumn();
             Fecha = new DataGridViewTextBoxColumn();
-            IdCliente = new DataGridViewTextBoxColumn();
+            Cliente = new DataGridViewTextBoxColumn();
             MetodoPago = new DataGridViewTextBoxColumn();
             TotalVenta = new DataGridViewTextBoxColumn();
             label1 = new Label();
@@ -51,6 +51,10 @@
             textBoxTotalVenta = new TextBox();
             panel2 = new Panel();
             cancelarBoton = new Button();
+            textBoxIdVenta = new TextBox();
+            label3 = new Label();
+            textBoxFecha = new TextBox();
+            label4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -81,6 +85,7 @@
             modificarBoton.TabIndex = 6;
             modificarBoton.Text = "Modificar";
             modificarBoton.UseVisualStyleBackColor = false;
+            modificarBoton.Click += modificarBoton_Click;
             // 
             // eliminarBoton
             // 
@@ -94,7 +99,7 @@
             eliminarBoton.TabIndex = 5;
             eliminarBoton.Text = "Eliminar";
             eliminarBoton.UseVisualStyleBackColor = false;
-
+            eliminarBoton.Click += eliminarBoton_Click;
             // 
             // agregarBoton
             // 
@@ -108,7 +113,6 @@
             agregarBoton.TabIndex = 4;
             agregarBoton.Text = "Agregar";
             agregarBoton.UseVisualStyleBackColor = false;
-
             // 
             // dataGridView1
             // 
@@ -127,7 +131,7 @@
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 45;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idVentas, Fecha, IdCliente, MetodoPago, TotalVenta });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idVentas, Fecha, Cliente, MetodoPago, TotalVenta });
             dataGridView1.Location = new Point(31, 78);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -139,8 +143,11 @@
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(190, 190, 190);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(553, 275);
             dataGridView1.TabIndex = 3;
+            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
+            dataGridView1.Click += DataGridView1_SelectionChanged;
             // 
             // idVentas
             // 
@@ -156,12 +163,12 @@
             Fecha.Name = "Fecha";
             Fecha.ReadOnly = true;
             // 
-            // IdCliente
+            // Cliente
             // 
-            IdCliente.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            IdCliente.HeaderText = "IdCliente";
-            IdCliente.Name = "IdCliente";
-            IdCliente.ReadOnly = true;
+            Cliente.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Cliente.HeaderText = "Cliente";
+            Cliente.Name = "Cliente";
+            Cliente.ReadOnly = true;
             // 
             // MetodoPago
             // 
@@ -194,7 +201,7 @@
             guardarBoton.FlatAppearance.BorderSize = 0;
             guardarBoton.FlatStyle = FlatStyle.Flat;
             guardarBoton.ForeColor = Color.White;
-            guardarBoton.Location = new Point(902, 374);
+            guardarBoton.Location = new Point(902, 407);
             guardarBoton.Name = "guardarBoton";
             guardarBoton.Size = new Size(76, 22);
             guardarBoton.TabIndex = 7;
@@ -217,7 +224,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.FromArgb(116, 116, 116);
-            label5.Location = new Point(657, 101);
+            label5.Location = new Point(657, 195);
             label5.Name = "label5";
             label5.Size = new Size(48, 16);
             label5.TabIndex = 13;
@@ -226,7 +233,7 @@
             // textBoxCliente
             // 
             textBoxCliente.BackColor = Color.FromArgb(239, 239, 239);
-            textBoxCliente.Location = new Point(657, 120);
+            textBoxCliente.Location = new Point(657, 214);
             textBoxCliente.Name = "textBoxCliente";
             textBoxCliente.Size = new Size(321, 22);
             textBoxCliente.TabIndex = 14;
@@ -235,7 +242,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.FromArgb(116, 116, 116);
-            label6.Location = new Point(657, 183);
+            label6.Location = new Point(657, 254);
             label6.Name = "label6";
             label6.Size = new Size(106, 16);
             label6.TabIndex = 15;
@@ -244,7 +251,7 @@
             // textBoxMetodoPago
             // 
             textBoxMetodoPago.BackColor = Color.FromArgb(239, 239, 239);
-            textBoxMetodoPago.Location = new Point(657, 202);
+            textBoxMetodoPago.Location = new Point(657, 273);
             textBoxMetodoPago.Name = "textBoxMetodoPago";
             textBoxMetodoPago.Size = new Size(321, 22);
             textBoxMetodoPago.TabIndex = 16;
@@ -253,7 +260,7 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.FromArgb(116, 116, 116);
-            label7.Location = new Point(657, 280);
+            label7.Location = new Point(657, 318);
             label7.Name = "label7";
             label7.Size = new Size(105, 16);
             label7.TabIndex = 17;
@@ -262,7 +269,7 @@
             // textBoxTotalVenta
             // 
             textBoxTotalVenta.BackColor = Color.FromArgb(239, 239, 239);
-            textBoxTotalVenta.Location = new Point(657, 307);
+            textBoxTotalVenta.Location = new Point(657, 345);
             textBoxTotalVenta.Name = "textBoxTotalVenta";
             textBoxTotalVenta.Size = new Size(321, 22);
             textBoxTotalVenta.TabIndex = 18;
@@ -282,7 +289,7 @@
             cancelarBoton.FlatAppearance.BorderSize = 0;
             cancelarBoton.FlatStyle = FlatStyle.Flat;
             cancelarBoton.ForeColor = Color.FromArgb(114, 114, 114);
-            cancelarBoton.Location = new Point(657, 374);
+            cancelarBoton.Location = new Point(657, 407);
             cancelarBoton.Name = "cancelarBoton";
             cancelarBoton.Size = new Size(75, 22);
             cancelarBoton.TabIndex = 20;
@@ -290,12 +297,52 @@
             cancelarBoton.UseVisualStyleBackColor = false;
             cancelarBoton.Click += cancelarBoton_Click;
             // 
+            // textBoxIdVenta
+            // 
+            textBoxIdVenta.BackColor = Color.FromArgb(239, 239, 239);
+            textBoxIdVenta.Location = new Point(657, 102);
+            textBoxIdVenta.Name = "textBoxIdVenta";
+            textBoxIdVenta.Size = new Size(321, 22);
+            textBoxIdVenta.TabIndex = 22;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.FromArgb(116, 116, 116);
+            label3.Location = new Point(657, 83);
+            label3.Name = "label3";
+            label3.Size = new Size(56, 16);
+            label3.TabIndex = 21;
+            label3.Text = "Id Venta";
+            // 
+            // textBoxFecha
+            // 
+            textBoxFecha.BackColor = Color.FromArgb(239, 239, 239);
+            textBoxFecha.Location = new Point(657, 159);
+            textBoxFecha.Name = "textBoxFecha";
+            textBoxFecha.Size = new Size(321, 22);
+            textBoxFecha.TabIndex = 24;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = Color.FromArgb(116, 116, 116);
+            label4.Location = new Point(657, 140);
+            label4.Name = "label4";
+            label4.Size = new Size(44, 16);
+            label4.TabIndex = 23;
+            label4.Text = "Fecha";
+            // 
             // VentaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1007, 441);
+            Controls.Add(textBoxFecha);
+            Controls.Add(label4);
+            Controls.Add(textBoxIdVenta);
+            Controls.Add(label3);
             Controls.Add(cancelarBoton);
             Controls.Add(guardarBoton);
             Controls.Add(panel2);
@@ -340,8 +387,12 @@
         private Button cancelarBoton;
         private DataGridViewTextBoxColumn idVentas;
         private DataGridViewTextBoxColumn Fecha;
-        private DataGridViewTextBoxColumn IdCliente;
+        private DataGridViewTextBoxColumn Cliente;
         private DataGridViewTextBoxColumn MetodoPago;
         private DataGridViewTextBoxColumn TotalVenta;
+        private TextBox textBoxIdVenta;
+        private Label label3;
+        private TextBox textBoxFecha;
+        private Label label4;
     }
 }

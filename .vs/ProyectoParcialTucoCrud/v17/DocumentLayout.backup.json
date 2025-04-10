@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|c:\\users\\ces\\source\\repos\\proyectoparcialtucocrud\\formulariosvista\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|solutionrelative:formulariosvista\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|c:\\users\\ces\\source\\repos\\proyectoparcialtucocrud\\formulariosvista\\menuprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|solutionrelative:formulariosvista\\menuprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|c:\\users\\ces\\source\\repos\\proyectoparcialtucocrud\\formulariosvista\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|solutionrelative:formulariosvista\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|c:\\users\\ces\\source\\repos\\proyectoparcialtucocrud\\formulariosvista\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|solutionrelative:formulariosvista\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|c:\\users\\ces\\source\\repos\\proyectoparcialtucocrud\\formulariosvista\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|solutionrelative:formulariosvista\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|c:\\users\\ces\\source\\repos\\proyectoparcialtucocrud\\formulariosvista\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|solutionrelative:formulariosvista\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,12 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
@@ -59,82 +30,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MenuPrincipal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\MenuPrincipal.cs",
-              "RelativeDocumentMoniker": "FormulariosVista\\MenuPrincipal.cs",
-              "ToolTip": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\MenuPrincipal.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "FormulariosVista\\MenuPrincipal.cs [Dise\u00F1o]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:05:06.856Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MenuPrincipal.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\MenuPrincipal.Designer.cs",
-              "RelativeDocumentMoniker": "FormulariosVista\\MenuPrincipal.Designer.cs",
-              "ToolTip": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\MenuPrincipal.Designer.cs*",
-              "RelativeToolTip": "FormulariosVista\\MenuPrincipal.Designer.cs*",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAmwFgAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:04:41.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\Program.cs",
-              "RelativeDocumentMoniker": "FormulariosVista\\Program.cs",
-              "ToolTip": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\Program.cs",
-              "RelativeToolTip": "FormulariosVista\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:03:20.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Venta.cs",
-              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\Venta.cs",
-              "RelativeDocumentMoniker": "FormulariosVista\\Venta.cs",
-              "ToolTip": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\Venta.cs",
-              "RelativeToolTip": "FormulariosVista\\Venta.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:01:19.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MenuPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\MenuPrincipal.cs",
-              "RelativeDocumentMoniker": "FormulariosVista\\MenuPrincipal.cs",
-              "ToolTip": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\MenuPrincipal.cs*",
-              "RelativeToolTip": "FormulariosVista\\MenuPrincipal.cs*",
-              "ViewState": "AgIAABUAAAAAAAAAAAA5wC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T18:55:41.316Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Venta.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\Venta.cs",
-              "RelativeDocumentMoniker": "FormulariosVista\\Venta.cs",
-              "ToolTip": "C:\\Users\\Ces\\source\\repos\\ProyectoParcialTucoCrud\\FormulariosVista\\Venta.cs [Dise\u00F1o]",
-              "RelativeToolTip": "FormulariosVista\\Venta.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T18:52:41.473Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

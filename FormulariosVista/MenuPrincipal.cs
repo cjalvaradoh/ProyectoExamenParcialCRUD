@@ -1,4 +1,5 @@
 ﻿using ProyectoParcialTucoCrud.Aplication;
+using ProyectoParcialTucoCrud.Application;
 using ProyectoParcialTucoCrud.Venta.Aplication;
 using System;
 using System.Collections.Generic;
@@ -16,20 +17,20 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
     public partial class MenuPrincipal : Form
     {
         private readonly CrearVentaHandler _crearHandler;
-        private readonly EliminarVentaHandler _eliminarHandler;
+        private readonly ModificarVentaHandler _modificarHandler;
 
 
-        public MenuPrincipal(CrearVentaHandler crearHandler, EliminarVentaHandler eliminarHandler)
+        public MenuPrincipal(CrearVentaHandler crearHandler, ModificarVentaHandler modificarHandler)
         {
             InitializeComponent();
             _crearHandler = crearHandler;
-            _eliminarHandler = eliminarHandler;
+            _modificarHandler = modificarHandler;
 
 
         }
         private void ventaBoton_Click(object sender, EventArgs e)
         {
-            var ventaForm = new VentaForm(_crearHandler, _eliminarHandler);
+            var ventaForm = new VentaForm(_crearHandler, _modificarHandler);
             MostrarFormulario(ventaForm);
         }
         private void MostrarFormulario(Form formulario)

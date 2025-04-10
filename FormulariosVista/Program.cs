@@ -1,6 +1,8 @@
-using ProyectoParcialTucoCrud.Aplication;
+using System;
+using ProyectoParcialTucoCrud.Application;
 using ProyectoParcialTucoCrud.FormulariosVista;
 using ProyectoParcialTucoCrud.Venta.Aplication;
+using WinFormsApp = System.Windows.Forms.Application;
 
 namespace ProyectoParcialTucoCrud.Venta.Winforms
 {
@@ -14,11 +16,10 @@ namespace ProyectoParcialTucoCrud.Venta.Winforms
         {
             var ventaRepository = new VentaCsvRepository();
             var crearHandler = new CrearVentaHandler(ventaRepository);
-            var eliminarHandler = new EliminarVentaHandler(ventaRepository);
+            var modificarHandler = new ModificarVentaHandler(ventaRepository);
             // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MenuPrincipal(crearHandler, eliminarHandler));
+            WinFormsApp.Run(new MenuPrincipal(crearHandler, modificarHandler));
         }
     }
 }

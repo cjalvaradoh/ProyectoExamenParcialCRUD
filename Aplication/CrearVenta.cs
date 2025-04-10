@@ -9,9 +9,11 @@ namespace ProyectoParcialTucoCrud.Venta.Aplication
 {
     public class CrearVentaCommand
     {
+        public int IdVenta { get; internal set; }
         public string Cliente { get; set; }   
         public string MetodoPago { get; set; } 
-        public decimal TotalVenta { get; set; } 
+        public decimal TotalVenta { get; set; }
+        public string Fecha { get; internal set; }
     }
 
 
@@ -40,21 +42,19 @@ namespace ProyectoParcialTucoCrud.Venta.Aplication
 
                 var venta = new Domain.Entities.Venta
                 {
-                    Cliente = command.Cliente, 
-                    Fecha = DateTime.Now, 
+                    IdVenta = command.IdVenta,  // Asignamos el IdVenta directamente desde el command
+                    Cliente = command.Cliente,
+                    Fecha = command.Fecha,
                     MetodoPago = command.MetodoPago,
                     TotalVenta = command.TotalVenta
                 };
 
-             
                 var ventaCreada = await _ventaRepository.CrearVentaAsync(venta);
 
-               
                 return ventaCreada != null && ventaCreada.IdVenta > 0;
             }
             catch (Exception ex)
             {
-               
                 Console.WriteLine($"Error al crear venta: {ex.Message}");
                 return false;
             }

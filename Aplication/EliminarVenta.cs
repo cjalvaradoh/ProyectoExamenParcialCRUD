@@ -11,7 +11,8 @@ namespace ProyectoParcialTucoCrud.Aplication
 {
     public class EliminarVentaCommand
     {
-        public int idVenta { get; set; }  
+        public int IdVenta { get; set; }
+
     }
 
     public class EliminarVentaHandler
@@ -25,7 +26,21 @@ namespace ProyectoParcialTucoCrud.Aplication
 
         public async Task<bool> Handle(EliminarVentaCommand command)
         {
-            return await _ventaRepository.EliminarVentaAsync(command.idVenta);
+            // Validación básica del ID
+            if (command.IdVenta <= 0)
+            {
+                throw new ArgumentException("El ID de venta debe ser mayor que cero");
+            }
+
+            // Verificar si la venta existe
+            var ventaExistente = await _ventaRepository.ObtenerVentaPorIdAsync(command.IdVenta);
+            if (ventaExistente == null)
+            {
+                throw new KeyNotFoundException($"No se encontró una venta con el ID {command.IdVenta}");
+            }
+
+            // Eliminar la venta
+            return await _ventaRepository.EliminarVentaAsync(command.IdVenta);
         }
     }
 }
