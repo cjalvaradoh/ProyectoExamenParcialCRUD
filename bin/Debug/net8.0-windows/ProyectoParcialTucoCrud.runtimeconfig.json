@@ -12,8 +12,12 @@
       }
     ],
     "configProperties": {
+<<<<<<< HEAD
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true,
       "CSWINRT_USE_WINDOWS_UI_XAML_PROJECTIONS": false
+=======
+      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true
+>>>>>>> dc2d6cd00dbe55aa8b1012535890b301c0799e18
     }
   }
 }

@@ -65,7 +65,11 @@
             // 
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
+<<<<<<< HEAD
             button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+=======
+            button2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+>>>>>>> dc2d6cd00dbe55aa8b1012535890b301c0799e18
             button2.ForeColor = Color.White;
             button2.Location = new Point(540, 14);
             button2.Name = "button2";
@@ -73,13 +77,20 @@
             button2.TabIndex = 1;
             button2.Text = "Productos";
             button2.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
             button2.Click += btnProductos_Click;
+=======
+>>>>>>> dc2d6cd00dbe55aa8b1012535890b301c0799e18
             // 
             // button1
             // 
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
+<<<<<<< HEAD
             button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+=======
+            button1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+>>>>>>> dc2d6cd00dbe55aa8b1012535890b301c0799e18
             button1.ForeColor = Color.White;
             button1.Location = new Point(320, 14);
             button1.Name = "button1";

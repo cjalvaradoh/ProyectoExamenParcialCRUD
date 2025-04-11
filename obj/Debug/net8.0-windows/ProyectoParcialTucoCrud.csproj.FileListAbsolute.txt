@@ -42,3 +42,4 @@ C:\Users\PC\Downloads\ProyectoExamenParcialCRUD-master\obj\Debug\net8.0-windows\
 C:\Users\PC\Downloads\ProyectoExamenParcialCRUD-master\obj\Debug\net8.0-windows\ProyectoParcialTucoCrud.pdb
 C:\Users\PC\Downloads\ProyectoExamenParcialCRUD-master\obj\Debug\net8.0-windows\ProyectoParcialTucoCrud.genruntimeconfig.cache
 C:\Users\PC\Downloads\ProyectoExamenParcialCRUD-master\obj\Debug\net8.0-windows\ref\ProyectoParcialTucoCrud.dll
+C:\Users\PC\Downloads\ProyectoExamenParcialCRUD-master\obj\Debug\net8.0-windows\ProyectoParcialTucoCrud.sourcelink.json

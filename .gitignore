@@ -1,0 +1,14 @@
+# Archivos de configuración de Visual Studio
+.vs/
+*.user
+*.suo
+
+# Binarios y objetos generados
+bin/
+obj/
+
+# Archivos temporales
+*.log
+*.vsidx
+*.cache
+*.v2
