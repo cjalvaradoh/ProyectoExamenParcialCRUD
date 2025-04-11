@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PC\\Downloads\\ProyectoExamenParcialCRUD-master\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|c:\\users\\pc\\downloads\\proyectoexamenparcialcrud-master\\formulariosvista\\frmproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|solutionrelative:formulariosvista\\frmproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|c:\\users\\pc\\downloads\\proyectoexamenparcialcrud-master\\formulariosvista\\frmproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB0915AE-1CBC-494B-B4D5-B4B9255081F7}|ProyectoParcialTucoCrud.csproj|solutionrelative:formulariosvista\\frmproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmProducto.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\ProyectoExamenParcialCRUD-master\\FormulariosVista\\FrmProducto.cs",
+              "RelativeDocumentMoniker": "FormulariosVista\\FrmProducto.cs",
+              "ToolTip": "C:\\Users\\PC\\Downloads\\ProyectoExamenParcialCRUD-master\\FormulariosVista\\FrmProducto.cs",
+              "RelativeToolTip": "FormulariosVista\\FrmProducto.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAmwJwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T05:11:43.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmProducto.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\ProyectoExamenParcialCRUD-master\\FormulariosVista\\FrmProducto.cs",
+              "RelativeDocumentMoniker": "FormulariosVista\\FrmProducto.cs",
+              "ToolTip": "C:\\Users\\PC\\Downloads\\ProyectoExamenParcialCRUD-master\\FormulariosVista\\FrmProducto.cs [Dise\u00F1o]",
+              "RelativeToolTip": "FormulariosVista\\FrmProducto.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T05:11:14.391Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
