@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProyectoParcialTucoCrud")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f40fe9babca8dd00a5b16dc03799b960d82b230")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef8265985132b03dc72ae0227088a33bb19780b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProyectoParcialTucoCrud")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProyectoParcialTucoCrud")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

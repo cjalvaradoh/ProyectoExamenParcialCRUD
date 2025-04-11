@@ -44,14 +44,10 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
             formulario.Show();
         }
 
-<<<<<<< HEAD
         private void btnProductos_Click(object sender, EventArgs e)
             {
                 FrmProducto frmProducto = new FrmProducto();
                 MostrarFormulario(frmProducto);
             }
-=======
-
->>>>>>> dc2d6cd00dbe55aa8b1012535890b301c0799e18
     }
 }

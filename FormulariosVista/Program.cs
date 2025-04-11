@@ -21,12 +21,5 @@ namespace ProyectoParcialTucoCrud.Venta.Winforms
             ApplicationConfiguration.Initialize();
             WinFormsApp.Run(new MenuPrincipal(crearHandler, modificarHandler));
         }
-<<<<<<< HEAD
     }
-=======
-
-
-    }
-
->>>>>>> dc2d6cd00dbe55aa8b1012535890b301c0799e18
 }
