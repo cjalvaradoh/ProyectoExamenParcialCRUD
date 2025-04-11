@@ -6,20 +6,74 @@ using System;
 using System.Windows.Forms;
 using ProyectoParcialTucoCrud.Application;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ProyectoParcialTucoCrud.Domain;
+using System.Diagnostics;
+using System.ComponentModel;
 
 namespace ProyectoParcialTucoCrud
 {
     public partial class VentaForm : Form
     {
+        private readonly BindingList<Ventas> _ventasTemporales = new();
         private readonly CrearVentaHandler _crearVentaHandler;
         private readonly ModificarVentaHandler _modificarVentaHandler;
         private readonly EliminarVentaHandler _eliminarVentaHandler;
-
-        public VentaForm(CrearVentaHandler crearVentaHandler, ModificarVentaHandler modificarVentaHandler)
+        private readonly IVentaRepository _ventaRepository;
+        public VentaForm(
+         CrearVentaHandler crearVentaHandler,
+         ModificarVentaHandler modificarVentaHandler,
+         EliminarVentaHandler eliminarVentaHandler,
+         IVentaRepository ventaRepository)
         {
+            InitializeComponent();
+
             _crearVentaHandler = crearVentaHandler;
             _modificarVentaHandler = modificarVentaHandler;
-            InitializeComponent();
+            _eliminarVentaHandler = eliminarVentaHandler;
+            _ventaRepository = ventaRepository;
+        }
+
+        private void VentaForm_Load(object sender, EventArgs e)
+        {
+            dataGridView1.AutoGenerateColumns = false;
+
+            // Configurar columnas manualmente con DataPropertyName
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "IdVenta",
+                HeaderText = "ID Venta",
+                DataPropertyName = "IdVenta" // Nombre de la propiedad en la clase Ventas
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Fecha",
+                HeaderText = "Fecha",
+                DataPropertyName = "Fecha"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Cliente",
+                HeaderText = "Cliente",
+                DataPropertyName = "Cliente"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "MetodoPago",
+                HeaderText = "Método de Pago",
+                DataPropertyName = "MetodoPago"
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TotalVenta",
+                HeaderText = "Total Venta",
+                DataPropertyName = "TotalVenta"
+            });
+
+            dataGridView1.DataSource = _ventasTemporales;
         }
 
         // Event handler for saving a new sale
@@ -60,10 +114,14 @@ namespace ProyectoParcialTucoCrud
                 Fecha = fechaVenta.ToString("yyyy-MM-dd") // O el formato que desees
             };
 
-            dataGridView1.Rows.Add(nuevaVenta.IdVenta, nuevaVenta.Fecha, nuevaVenta.Cliente, nuevaVenta.MetodoPago, nuevaVenta.TotalVenta);
+            _ventasTemporales.Add(nuevaVenta);
+            MessageBox.Show("Venta guardada correctamente en memoria temporal!", "Éxito",
+                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
             LimpiarCampos();
         }
+
 
         private void LimpiarCampos()
         {
@@ -72,6 +130,7 @@ namespace ProyectoParcialTucoCrud
             textBoxCliente.Clear();
             textBoxMetodoPago.Clear();
             textBoxTotalVenta.Clear();
+            textBoxIdVenta.Focus();
         }
 
         private void cancelarBoton_Click(object sender, EventArgs e)
@@ -85,45 +144,89 @@ namespace ProyectoParcialTucoCrud
 
         private void modificarBoton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow != null)
+            if (dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index >= 0 &&
+                dataGridView1.CurrentRow.Index < _ventasTemporales.Count)
             {
-                // Obtener la fila seleccionada
-                DataGridViewRow selectedRow = dataGridView1.CurrentRow;
+                try
+                {
+                    var venta = _ventasTemporales[dataGridView1.CurrentRow.Index];
+                    venta.IdVenta = int.Parse(textBoxIdVenta.Text);
+                    venta.Fecha = DateTime.Parse(textBoxFecha.Text).ToString("yyyy-MM-dd");
+                    venta.Cliente = textBoxCliente.Text;
+                    venta.MetodoPago = textBoxMetodoPago.Text;
+                    venta.TotalVenta = decimal.Parse(textBoxTotalVenta.Text);
 
-                // Asignar los nuevos valores a las celdas
-                selectedRow.Cells[0].Value = textBoxIdVenta.Text; // Cliente
-                selectedRow.Cells[1].Value = textBoxFecha.Text; // Fecha
-                selectedRow.Cells[2].Value = textBoxCliente.Text; // Cliente
-                selectedRow.Cells[3].Value = textBoxMetodoPago.Text; // MetodoPago
-                selectedRow.Cells[4].Value = textBoxTotalVenta.Text; // TotalVenta
+                    _ventasTemporales.ResetBindings();
+                    MessageBox.Show("Venta modificada correctamente en memoria temporal!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al modificar: {ex.Message}");
+                }
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione una fila para modificar.");
+                MessageBox.Show("Seleccione una venta válida para modificar");
             }
         }
 
 
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            // Verificar si hay filas seleccionadas
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Obtener la primera fila seleccionada
                 var selectedRow = dataGridView1.SelectedRows[0];
 
-                // Asignar valores a los TextBox
-                textBoxIdVenta.Text = selectedRow.Cells[0].Value?.ToString() ?? "";
-                textBoxFecha.Text = selectedRow.Cells[1].Value?.ToString() ?? "";
-                textBoxCliente.Text = selectedRow.Cells[2].Value?.ToString() ?? "";
-                textBoxMetodoPago.Text = selectedRow.Cells[3].Value?.ToString() ?? "";
-                textBoxTotalVenta.Text = selectedRow.Cells[4].Value?.ToString() ?? "";
+                textBoxIdVenta.Text = selectedRow.Cells["IdVenta"].Value?.ToString() ?? "";
+                textBoxFecha.Text = selectedRow.Cells["Fecha"].Value?.ToString() ?? "";
+                textBoxCliente.Text = selectedRow.Cells["Cliente"].Value?.ToString() ?? "";
+                textBoxMetodoPago.Text = selectedRow.Cells["MetodoPago"].Value?.ToString() ?? "";
+                textBoxTotalVenta.Text = selectedRow.Cells["TotalVenta"].Value?.ToString() ?? "";
             }
         }
 
         private void eliminarBoton_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index < _ventasTemporales.Count)
+            {
+                _ventasTemporales.RemoveAt(dataGridView1.CurrentRow.Index);
+                MessageBox.Show("Venta eliminada de memoria temporal!");
+            }
+        }
 
+        private async void guardarCambiosBoton_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Archivos CSV (*.csv)|*.csv";
+                saveDialog.Title = "Guardar ventas como CSV";
+                saveDialog.FileName = "ventas.csv";
+                saveDialog.DefaultExt = "csv";
+                saveDialog.AddExtension = true;
+
+
+                saveDialog.AutoUpgradeEnabled = true;
+                saveDialog.RestoreDirectory = true;
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        await _ventaRepository.GuardarVentasAsync(saveDialog.FileName, _ventasTemporales.ToList());
+                        MessageBox.Show($"Archivo guardado correctamente en:\n{saveDialog.FileName}",
+                                        "Éxito",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al guardar archivo: {ex.Message}",
+                                      "Error",
+                                      MessageBoxButtons.OK,
+                                      MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }
