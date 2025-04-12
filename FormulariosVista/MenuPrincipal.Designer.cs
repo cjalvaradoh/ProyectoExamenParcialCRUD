@@ -30,48 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             panel1 = new Panel();
-            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             button2 = new Button();
             button1 = new Button();
             panel2 = new Panel();
             panel3 = new Panel();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(77, 0, 255);
-            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button2);
-
             panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1007, 100);
+            panel1.Size = new Size(1151, 133);
             panel1.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(906, 33);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(69, 34);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(33, 14);
+            pictureBox1.Location = new Point(38, 19);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(123, 70);
+            pictureBox1.Size = new Size(141, 93);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -80,26 +67,27 @@
             // 
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-
+            button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(540, 14);
-            button2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(617, 19);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(154, 72);
+            button2.Size = new Size(176, 96);
             button2.TabIndex = 1;
             button2.Text = "Productos";
             button2.UseVisualStyleBackColor = true;
-
             button2.Click += btnProductos_Click;
-
+            // 
+            // button1
+            // 
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(320, 14);
+            button1.Location = new Point(366, 19);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(154, 72);
+            button1.Size = new Size(176, 96);
             button1.TabIndex = 0;
             button1.Text = "Ventas";
             button1.UseVisualStyleBackColor = true;
@@ -109,33 +97,35 @@
             // 
             panel2.BackColor = Color.FromArgb(224, 211, 255);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 561);
+            panel2.Location = new Point(0, 748);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1007, 69);
+            panel2.Size = new Size(1151, 92);
             panel2.TabIndex = 1;
             // 
             // panel3
             // 
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 100);
+            panel3.Location = new Point(0, 133);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1007, 461);
+            panel3.Size = new Size(1151, 615);
             panel3.TabIndex = 2;
             // 
             // MenuPrincipal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1007, 630);
+            ClientSize = new Size(1151, 840);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MenuPrincipal";
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -148,6 +138,5 @@
         private Button button1;
         private Panel panel2;
         private Panel panel3;
-        private PictureBox pictureBox2;
     }
 }
