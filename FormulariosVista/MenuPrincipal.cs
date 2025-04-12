@@ -25,7 +25,7 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
             InitializeComponent();
             _crearHandler = crearHandler;
             _modificarHandler = modificarHandler;
-<<<<<<< HEAD
+
 
             // Botón cerrar (X)
             Button btnCerrar = new Button();
@@ -55,9 +55,9 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
             btnMinimizar.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
             panel1.Controls.Add(btnMinimizar);
 
-=======
+
             _eliminarHandler = eliminarHandler;
->>>>>>> main
+
 
         }
         private void ventaBoton_Click(object sender, EventArgs e)
@@ -83,13 +83,13 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
             formulario.Show();
         }
 
-<<<<<<< HEAD
+
         private void btnProductos_Click(object sender, EventArgs e)
             {
                 FrmProducto frmProducto = new FrmProducto();
                 MostrarFormulario(frmProducto);
             }
-=======
+
         private void MeExit()
         {
            
@@ -105,6 +105,5 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
             MeExit(); 
         }
 
->>>>>>> main
     }
 }
