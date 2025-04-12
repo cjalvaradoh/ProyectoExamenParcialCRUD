@@ -35,29 +35,18 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
 
         private void LimpiarCampos()
         {
-            // Limpia texto
             txtCodigo.Text = string.Empty;
             txtNombre.Text = string.Empty;
             txtDescripcion.Text = string.Empty;
             txtStock.Text = string.Empty;
             txtPrecioUnitario.Text = string.Empty;
-
-            // Limpia ComboBoxes correctamente
             cbCategoria.SelectedItem = null;
             cbCategoria.Text = string.Empty;
-
             cbUnidadMedida.SelectedItem = null;
             cbUnidadMedida.Text = string.Empty;
-
-            // Deselecciona fila del DataGridView si hay alguna
             dgvProductos.ClearSelection();
-
-            // Reinicia ID de selección
             idSeleccionado = null;
         }
-
-
-
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
@@ -80,19 +69,20 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (idSeleccionado == null)
+            if (dgvProductos.CurrentRow == null)
             {
                 MessageBox.Show("Selecciona una fila para modificar.");
                 return;
             }
+
+            int id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
+            var producto = listaProductos.Find(p => p.IdProducto == id);
 
             if (!int.TryParse(txtStock.Text, out int stock) || !decimal.TryParse(txtPrecioUnitario.Text, out decimal precio))
             {
                 MessageBox.Show("Stock debe ser un número entero y Precio un decimal válido.");
                 return;
             }
-
-            var producto = listaProductos.Find(p => p.IdProducto == idSeleccionado);
 
             if (producto != null)
             {
@@ -104,11 +94,10 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
                 producto.UnidadMedida = cbUnidadMedida.Text;
                 producto.PrecioUnitario = precio;
 
-                CargarTabla();       // Refresca la tabla con los nuevos valores
-                LimpiarCampos();     // Limpia los campos luego de modificar
+                CargarTabla();
+                LimpiarCampos();
             }
         }
-
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -118,10 +107,7 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
                 return;
             }
 
-            // Obtener ID de la fila seleccionada
             int id = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
-
-            // Buscar en la lista y eliminar
             var producto = listaProductos.Find(p => p.IdProducto == id);
             if (producto != null)
             {
@@ -131,11 +117,8 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
             }
         }
 
-
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-
             LimpiarCampos();
         }
 
@@ -154,10 +137,6 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
                 cbUnidadMedida.Text = seleccionado.UnidadMedida;
                 txtPrecioUnitario.Text = seleccionado.PrecioUnitario.ToString();
             }
-        }
-        private void dgvProductos_CellClick(object sender, EventArgs e)
-        {
-
         }
     }
 }

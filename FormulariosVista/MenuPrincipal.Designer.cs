@@ -44,6 +44,7 @@
             panel1.BackColor = Color.FromArgb(77, 0, 255);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button2);
+
             panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -68,6 +69,7 @@
 
             button2.ForeColor = Color.White;
             button2.Location = new Point(540, 14);
+            button2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button2.Name = "button2";
             button2.Size = new Size(154, 72);
             button2.TabIndex = 1;

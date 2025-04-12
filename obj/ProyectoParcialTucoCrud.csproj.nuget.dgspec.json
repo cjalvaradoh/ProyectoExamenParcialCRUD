@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Downloads\\ProyectoExamenParcialCRUD-master\\ProyectoParcialTucoCrud.csproj": {}
+    "C:\\Users\\mmari\\Source\\Repos\\ProyectoExamenParcialCRUD\\ProyectoParcialTucoCrud.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Downloads\\ProyectoExamenParcialCRUD-master\\ProyectoParcialTucoCrud.csproj": {
+    "C:\\Users\\mmari\\Source\\Repos\\ProyectoExamenParcialCRUD\\ProyectoParcialTucoCrud.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Downloads\\ProyectoExamenParcialCRUD-master\\ProyectoParcialTucoCrud.csproj",
+        "projectUniqueName": "C:\\Users\\mmari\\Source\\Repos\\ProyectoExamenParcialCRUD\\ProyectoParcialTucoCrud.csproj",
         "projectName": "ProyectoParcialTucoCrud",
-        "projectPath": "C:\\Users\\PC\\Downloads\\ProyectoExamenParcialCRUD-master\\ProyectoParcialTucoCrud.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Downloads\\ProyectoExamenParcialCRUD-master\\obj\\",
+        "projectPath": "C:\\Users\\mmari\\Source\\Repos\\ProyectoExamenParcialCRUD\\ProyectoParcialTucoCrud.csproj",
+        "packagesPath": "C:\\Users\\mmari\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mmari\\Source\\Repos\\ProyectoExamenParcialCRUD\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mmari\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,13 +34,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -74,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
