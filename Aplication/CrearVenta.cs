@@ -14,6 +14,7 @@ namespace ProyectoParcialTucoCrud.Venta.Aplication
         public string MetodoPago { get; set; } 
         public decimal TotalVenta { get; set; }
         public string Fecha { get; internal set; }
+        public Domain.Entities.Venta Venta { get; internal set; }
     }
 
 
@@ -23,42 +24,36 @@ namespace ProyectoParcialTucoCrud.Venta.Aplication
 
         public CrearVentaHandler(IVentaRepository ventaRepository)
         {
-            _ventaRepository = ventaRepository ?? throw new ArgumentNullException(nameof(ventaRepository));
+            _ventaRepository = ventaRepository;
         }
 
-        public async Task<bool> Handle(CrearVentaCommand command)
+        public async Task Handle(CrearVentaCommand command)
         {
-            try
+            if (command.Venta == null)
+                throw new ArgumentNullException(nameof(command.Venta));
+
+            await _ventaRepository.CrearVentaAsync(command.Venta);
+
+            // Guardar todos los registros en archivo después de crear la venta
+            await GuardarVentasEnArchivo();
+        }
+
+        private async Task GuardarVentasEnArchivo()
+        {
+            var ventas = await _ventaRepository.ObtenerTodasVentasAsync();
+            var rutaArchivo = "ventas.csv";
+
+            var lineas = new List<string>
+        {
+            "IdVenta,Fecha,Cliente,MetodoPago,TotalVenta"
+        };
+
+            foreach (var venta in ventas)
             {
-                if (command == null)
-                    throw new ArgumentNullException(nameof(command));
-
-                if (string.IsNullOrEmpty(command.MetodoPago))
-                    throw new ArgumentException("El método de pago no puede estar vacío.");
-                if (command.TotalVenta <= 0)
-                    throw new ArgumentException("El TotalVenta debe ser mayor que 0.");
-                if (string.IsNullOrEmpty(command.Cliente))
-                    throw new ArgumentException("El Cliente no puede estar vacío.");
-
-                var venta = new Domain.Entities.Venta
-                {
-                    IdVenta = command.IdVenta,  // Asignamos el IdVenta directamente desde el command
-                    Cliente = command.Cliente,
-                    Fecha = command.Fecha,
-                    MetodoPago = command.MetodoPago,
-                    TotalVenta = command.TotalVenta
-                };
-
-                var ventaCreada = await _ventaRepository.CrearVentaAsync(venta);
-
-                return ventaCreada != null && ventaCreada.IdVenta > 0;
+                lineas.Add($"{venta.IdVenta},{venta.Fecha},{venta.Cliente},{venta.MetodoPago},{venta.TotalVenta}");
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error al crear venta: {ex.Message}");
-                return false;
-            }
+
+            await File.WriteAllLinesAsync(rutaArchivo, lineas);
         }
     }
-
 }

@@ -18,13 +18,14 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
     {
         private readonly CrearVentaHandler _crearHandler;
         private readonly ModificarVentaHandler _modificarHandler;
+        private readonly EliminarVentaHandler _eliminarHandler;
 
-
-        public MenuPrincipal(CrearVentaHandler crearHandler, ModificarVentaHandler modificarHandler)
+        public MenuPrincipal(CrearVentaHandler crearHandler, ModificarVentaHandler modificarHandler, EliminarVentaHandler eliminarHandler)
         {
             InitializeComponent();
             _crearHandler = crearHandler;
             _modificarHandler = modificarHandler;
+<<<<<<< HEAD
 
             // Botón cerrar (X)
             Button btnCerrar = new Button();
@@ -54,11 +55,21 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
             btnMinimizar.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
             panel1.Controls.Add(btnMinimizar);
 
+=======
+            _eliminarHandler = eliminarHandler;
+>>>>>>> main
 
         }
         private void ventaBoton_Click(object sender, EventArgs e)
         {
-            var ventaForm = new VentaForm(_crearHandler, _modificarHandler);
+            var ventaRepository = new VentaCsvRepository();
+            // Usa los handlers que ya recibiste en el constructor
+            var ventaForm = new VentaForm(
+                _crearHandler,
+                _modificarHandler,
+                _eliminarHandler,
+                ventaRepository); // Añade el repositorio
+
             MostrarFormulario(ventaForm);
         }
         private void MostrarFormulario(Form formulario)
@@ -72,10 +83,28 @@ namespace ProyectoParcialTucoCrud.FormulariosVista
             formulario.Show();
         }
 
+<<<<<<< HEAD
         private void btnProductos_Click(object sender, EventArgs e)
             {
                 FrmProducto frmProducto = new FrmProducto();
                 MostrarFormulario(frmProducto);
             }
+=======
+        private void MeExit()
+        {
+           
+            var iExit = MessageBox.Show("¿Deseas salir?", "Guardar DataGridView", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (iExit == DialogResult.Yes)
+            {
+                System.Windows.Forms.Application.Exit(); 
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            MeExit(); 
+        }
+
+>>>>>>> main
     }
 }

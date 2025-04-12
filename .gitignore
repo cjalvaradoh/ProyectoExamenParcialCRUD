@@ -1,8 +1,19 @@
+# Visual Studio
 .vs/
-*.user
-*.suo
-*.vsidx
-*.dbmdl
-*.vssscc
 bin/
 obj/
+*.user
+*.suo
+*.cache
+*.pdb
+*.exe
+*.dll
+
+
+
+
+
+
+
+
+

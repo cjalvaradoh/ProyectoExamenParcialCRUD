@@ -26,21 +26,34 @@ namespace ProyectoParcialTucoCrud.Aplication
 
         public async Task<bool> Handle(EliminarVentaCommand command)
         {
-            // Validación básica del ID
-            if (command.IdVenta <= 0)
-            {
-                throw new ArgumentException("El ID de venta debe ser mayor que cero");
-            }
-
-            // Verificar si la venta existe
             var ventaExistente = await _ventaRepository.ObtenerVentaPorIdAsync(command.IdVenta);
             if (ventaExistente == null)
+                return false;
+
+            var resultado = await _ventaRepository.EliminarVentaAsync(command.IdVenta);
+
+            if (resultado)
+                await GuardarVentasEnArchivo();
+
+            return resultado;
+        }
+
+        private async Task GuardarVentasEnArchivo()
+        {
+            var ventas = await _ventaRepository.ObtenerTodasVentasAsync();
+            var rutaArchivo = "ventas.csv";
+
+            var lineas = new List<string>
+        {
+            "IdVenta,Fecha,Cliente,MetodoPago,TotalVenta"
+        };
+
+            foreach (var venta in ventas)
             {
-                throw new KeyNotFoundException($"No se encontró una venta con el ID {command.IdVenta}");
+                lineas.Add($"{venta.IdVenta},{venta.Fecha},{venta.Cliente},{venta.MetodoPago},{venta.TotalVenta}");
             }
 
-            // Eliminar la venta
-            return await _ventaRepository.EliminarVentaAsync(command.IdVenta);
+            await File.WriteAllLinesAsync(rutaArchivo, lineas);
         }
     }
 }

@@ -33,13 +33,8 @@
             panel1 = new Panel();
             modificarBoton = new Button();
             eliminarBoton = new Button();
-            agregarBoton = new Button();
+            guardarCambiosBoton = new Button();
             dataGridView1 = new DataGridView();
-            idVentas = new DataGridViewTextBoxColumn();
-            Fecha = new DataGridViewTextBoxColumn();
-            Cliente = new DataGridViewTextBoxColumn();
-            MetodoPago = new DataGridViewTextBoxColumn();
-            TotalVenta = new DataGridViewTextBoxColumn();
             label1 = new Label();
             guardarBoton = new Button();
             label2 = new Label();
@@ -64,7 +59,7 @@
             // 
             panel1.Controls.Add(modificarBoton);
             panel1.Controls.Add(eliminarBoton);
-            panel1.Controls.Add(agregarBoton);
+            panel1.Controls.Add(guardarCambiosBoton);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Left;
@@ -79,7 +74,7 @@
             modificarBoton.FlatAppearance.BorderSize = 0;
             modificarBoton.FlatStyle = FlatStyle.Flat;
             modificarBoton.ForeColor = Color.White;
-            modificarBoton.Location = new Point(195, 374);
+            modificarBoton.Location = new Point(239, 374);
             modificarBoton.Name = "modificarBoton";
             modificarBoton.Size = new Size(75, 22);
             modificarBoton.TabIndex = 6;
@@ -93,7 +88,7 @@
             eliminarBoton.FlatAppearance.BorderSize = 0;
             eliminarBoton.FlatStyle = FlatStyle.Flat;
             eliminarBoton.ForeColor = Color.White;
-            eliminarBoton.Location = new Point(114, 374);
+            eliminarBoton.Location = new Point(158, 374);
             eliminarBoton.Name = "eliminarBoton";
             eliminarBoton.Size = new Size(75, 22);
             eliminarBoton.TabIndex = 5;
@@ -101,18 +96,19 @@
             eliminarBoton.UseVisualStyleBackColor = false;
             eliminarBoton.Click += eliminarBoton_Click;
             // 
-            // agregarBoton
+            // guardarCambiosBoton
             // 
-            agregarBoton.BackColor = Color.FromArgb(0, 174, 255);
-            agregarBoton.FlatAppearance.BorderSize = 0;
-            agregarBoton.FlatStyle = FlatStyle.Flat;
-            agregarBoton.ForeColor = Color.White;
-            agregarBoton.Location = new Point(33, 374);
-            agregarBoton.Name = "agregarBoton";
-            agregarBoton.Size = new Size(75, 22);
-            agregarBoton.TabIndex = 4;
-            agregarBoton.Text = "Agregar";
-            agregarBoton.UseVisualStyleBackColor = false;
+            guardarCambiosBoton.BackColor = Color.FromArgb(0, 174, 255);
+            guardarCambiosBoton.FlatAppearance.BorderSize = 0;
+            guardarCambiosBoton.FlatStyle = FlatStyle.Flat;
+            guardarCambiosBoton.ForeColor = Color.White;
+            guardarCambiosBoton.Location = new Point(33, 374);
+            guardarCambiosBoton.Name = "guardarCambiosBoton";
+            guardarCambiosBoton.Size = new Size(119, 22);
+            guardarCambiosBoton.TabIndex = 4;
+            guardarCambiosBoton.Text = "Guardar Cambios";
+            guardarCambiosBoton.UseVisualStyleBackColor = false;
+            guardarCambiosBoton.Click += guardarCambiosBoton_Click;
             // 
             // dataGridView1
             // 
@@ -131,7 +127,6 @@
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 45;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idVentas, Fecha, Cliente, MetodoPago, TotalVenta });
             dataGridView1.Location = new Point(31, 78);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -148,41 +143,6 @@
             dataGridView1.TabIndex = 3;
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
             dataGridView1.Click += DataGridView1_SelectionChanged;
-            // 
-            // idVentas
-            // 
-            idVentas.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            idVentas.HeaderText = "IdVenta ";
-            idVentas.Name = "idVentas";
-            idVentas.ReadOnly = true;
-            // 
-            // Fecha
-            // 
-            Fecha.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Fecha.HeaderText = "Fecha Venta";
-            Fecha.Name = "Fecha";
-            Fecha.ReadOnly = true;
-            // 
-            // Cliente
-            // 
-            Cliente.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Cliente.HeaderText = "Cliente";
-            Cliente.Name = "Cliente";
-            Cliente.ReadOnly = true;
-            // 
-            // MetodoPago
-            // 
-            MetodoPago.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            MetodoPago.HeaderText = "Metodo de Pago";
-            MetodoPago.Name = "MetodoPago";
-            MetodoPago.ReadOnly = true;
-            // 
-            // TotalVenta
-            // 
-            TotalVenta.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            TotalVenta.HeaderText = "Total de Venta";
-            TotalVenta.Name = "TotalVenta";
-            TotalVenta.ReadOnly = true;
             // 
             // label1
             // 
@@ -359,6 +319,7 @@
             Name = "VentaForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += VentaForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -372,7 +333,7 @@
         private Panel panel1;
         private Button modificarBoton;
         private Button eliminarBoton;
-        private Button agregarBoton;
+        private Button guardarCambiosBoton;
         private DataGridView dataGridView1;
         private Label label1;
         private Button guardarBoton;
@@ -385,11 +346,6 @@
         private TextBox textBoxTotalVenta;
         private Panel panel2;
         private Button cancelarBoton;
-        private DataGridViewTextBoxColumn idVentas;
-        private DataGridViewTextBoxColumn Fecha;
-        private DataGridViewTextBoxColumn Cliente;
-        private DataGridViewTextBoxColumn MetodoPago;
-        private DataGridViewTextBoxColumn TotalVenta;
         private TextBox textBoxIdVenta;
         private Label label3;
         private TextBox textBoxFecha;
